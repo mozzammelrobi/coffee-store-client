@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     const links = <>
     <li><Link to='/addCoffe'>AddCoffe</Link></li>
-    <li><Link to='/updateCoffe'>Update coffe</Link></li>
+    {/* <li><Link to='/updateCoffe'>Update coffe</Link></li> */}
     </>
     return (
         <div className="navbar bg-base-100">

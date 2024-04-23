@@ -1,15 +1,26 @@
-import { Outlet } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
+import CoffeeCard from './components/CoffeeCard'
 
 function App() {
+  const coffees = useLoaderData()
+
 
   return (
-    <>
-    <Navbar></Navbar>
-     <h1 className='text-3xl font-bold'>Coffe client server</h1>
-     <Outlet></Outlet>
-    </>
+    <div>
+      <Navbar></Navbar>
+
+      <h1 className='text-6xl text-center font-bold mb-8'>Coffe service : {coffees.length}</h1>
+      <h1 className='text-6xl text-center font-bold mb-8'>Coffe service : </h1>
+
+      <div className='grid md:grid-cols-2 gap-4'>
+        {
+          coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+        }
+      </div>
+
+    </div>
   )
 }
 
